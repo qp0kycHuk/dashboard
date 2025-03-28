@@ -1,0 +1,5 @@
+@layer components {
+  .btn {
+    border-radius: 6px;
+  }
+}

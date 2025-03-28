@@ -1,0 +1,14 @@
+@import "./styles/css/reset.css";
+
+@import "tailwindcss";
+
+@plugin '@qpokychuk/tailwind-button-plugin';
+
+@import "./styles/css/theme.css";
+
+@import "@qpokychuk/fonts/inter/index.css";
+@import "@qpokychuk/fonts/gilroy/index.css";
+
+@import "./styles/css/style.css";
+
+

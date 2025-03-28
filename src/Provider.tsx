@@ -1,12 +1,12 @@
-import { createPortal } from "react-dom"
-import { ThemeContextProvider } from "./layout/ThemeContext"
-import { ToastContainer } from "./libs/Toast"
+import { QueryClientProvider } from "@tanstack/react-query"
+import { queryClient } from "@/shared/api/query-client"
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 export function Provider({ children }: React.PropsWithChildren) {
   return (
-    <ThemeContextProvider>
+    <QueryClientProvider client={queryClient}>
       {children}
-      {createPortal(<ToastContainer />, document.body)}
-    </ThemeContextProvider>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   )
 }

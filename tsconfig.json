@@ -51,10 +51,10 @@
         "src/libs"
       ],
       "@hooks/*": [
-        "src/hooks/*"
+        "src/shared/hooks/*"
       ],
       "@hooks": [
-        "src/hooks"
+        "src/shared/hooks"
       ],
     }
   },

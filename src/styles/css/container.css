@@ -1,0 +1,30 @@
+:root {
+  --section-width     : calc(100vw - 30px);
+}
+
+dialog,
+section,
+header,
+footer {
+  padding-inline: calc(50% - var(--section-width) / 2);
+}
+
+
+
+@media(width >= theme(--breakpoint-md)) {
+  :root {
+    --section-width: var(--container-md);
+  }
+}
+
+@media(width >= theme(--breakpoint-lg)) {
+  :root {
+    --section-width:  var(--container-lg);
+  }
+}
+
+@media(width >= theme(--breakpoint-xl)) {
+  :root {
+    --section-width:  var(--container-xl);
+  }
+}

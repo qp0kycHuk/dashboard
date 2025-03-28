@@ -1,0 +1,55 @@
+:root {
+  --rgb-l1: 237, 237, 237;
+  --rgb-l2: 243, 240, 235;
+  --rgb-l3: 255, 255, 255;
+  --rgb-default: 55, 55, 55;
+}
+
+.dark {
+  --rgb-l1: 24, 24, 24;
+  --rgb-l2: 40, 40, 40;
+  --rgb-l3: 50, 50, 50;
+  --rgb-default: 255, 255, 255;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* theme colors */
+  --color-*: initial;
+  --color-primary: #00aff5;
+  --color-sec: #ff9f43;
+  --color-red: #c0392b;
+  --color-green: #27ae60;
+  --color-blue: #2980b9;
+  --color-yellow: #f39c12;
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* colors */
+  --color-l1: rgb(var(--rgb-l1));
+  --color-l2: rgb(var(--rgb-l2));
+  --color-l3: rgb(var(--rgb-l3));
+  --color-default: rgb(var(--rgb-default));
+
+  /* font */
+  --font-*: initial;
+  --font-base: "Inter", arial, helvetica, sans-serif;
+  --font-alt: "Gilroy", arial, helvetica, sans-serif;
+
+  /* containers */
+  --container-*: initial;
+  --container-xs: 420px;
+  --container-sm: 580px;
+  --container-md: 740px;
+  --container-lg: 1170px;
+  --container-xl: 1170px;
+
+  /* breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-xs: calc(420px + 29.98px);
+  --breakpoint-sm: calc(580px + 29.98px);
+  --breakpoint-md: calc(740px + 29.98px);
+  --breakpoint-lg: calc(1170px + 29.98px);
+  --breakpoint-xl: 1366px;
+}
