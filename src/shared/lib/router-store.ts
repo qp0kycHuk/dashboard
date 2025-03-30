@@ -1,48 +1,48 @@
-import { router } from "@/app/router/router"
-import { AnyRouter } from "@tanstack/react-router"
-import { computed, createAtom } from "mobx"
+// import { router } from "@/app/router/router"
+import { AnyRouter, AllParams } from "@tanstack/router-core"
+import { createAtom } from "mobx"
 
 export class RouterStore<R extends AnyRouter = AnyRouter> {
   private atom = createAtom('mobxRouter', this.startObserve.bind(this), this.stopObserve.bind(this))
 
-  constructor(private _router: R) { }
+  navigate
+
+  constructor(private _router: R) {
+    this.navigate = this._router.navigate
+  }
 
   private get router() {
     this.atom.reportObserved()
     return this._router
   }
 
-  get params() {
-    const { matches } = this.router.
-    const routeMatch = matches[matches.length - 1]
-    return routeMatch ? routeMatch.params : {}
-  }
-
   get state() {
     return this.router.state
   }
 
-  get searchParams(){
+  get params(): AllParams<R['routeTree']> {
+    const { matches } = this.router.state
+    const routeMatch = matches.at(-1)
+    return (routeMatch?.params || {}) as AllParams<R['routeTree']>
+  }
+
+  get search() {
     const { matches } = this.router.state
     const routeMatch = matches[matches.length - 1]
     return routeMatch ? routeMatch.search : {}
   }
 
+
   private unsubscribe = () => { }
   private startObserve() {
-    console.log('startObserve')
-
-    const unsubscribeRouter = router.subscribe('onResolved', (e) => {
-      console.log(router.matchRoute(router.state.location))
-      console.log(router.state)
-
+    const unsubscribeRouter = this.router.subscribe('onResolved', () => {
+      this.atom.reportChanged()
     })
 
     this.unsubscribe = unsubscribeRouter
   }
-  private stopObserve() {
-    console.log('stopObserve')
 
+  private stopObserve() {
     this.unsubscribe()
   }
 }

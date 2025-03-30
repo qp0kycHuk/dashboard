@@ -14,7 +14,7 @@ export class QueryStore<
   constructor(
     private client: QueryClient,
     private getOptions: () => QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>,
-  ) {    
+  ) {
     this.queryObserver = new QueryObserver(this.client, this.defaultedOptions)
   }
 
@@ -45,7 +45,8 @@ export class QueryStore<
     this.unsubscribe()
   }
 
-  private get defaultedOptions() {
+  @computed
+  get defaultedOptions() {
     return this.client.defaultQueryOptions(this.getOptions())
   }
 }

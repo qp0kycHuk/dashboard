@@ -1,10 +1,16 @@
 import { observer } from "mobx-react-lite"
 import { router } from "./app/router/router"
 import { RouterProvider } from "@tanstack/react-router"
+import { Provider } from "./Provider"
+import { initRoutes } from "./app/router/routes"
+
+initRoutes()
 
 function AppComponent() {
   return (
-    <RouterProvider router={router} />
+    <Provider>
+      <RouterProvider router={router} />
+    </Provider>
   )
 }
 
