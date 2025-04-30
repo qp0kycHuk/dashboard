@@ -1,4 +1,3 @@
-import { routerStore } from "@/app/router/router"
 import { Navigation } from "@/entities/accounts/ui/navigation"
 import { ThemeToggle } from "@/entities/theme/ui/ThemeToggle/ThemeToggle"
 import { Link, Outlet } from "@tanstack/react-router"
@@ -15,8 +14,6 @@ export const Layout = observer(() => {
         <Link to="/" search={{q:'aaa'}}>home?</Link>
         <Link to="/info">info</Link>
         <Link to="/about">about</Link>
-        {JSON.stringify(routerStore.params)}
-        {JSON.stringify(routerStore.search)}
         <Navigation />
       </header>
       <Outlet />
