@@ -1,5 +1,5 @@
 import { DefaultError, QueryClient, QueryKey, QueryObserver, QueryObserverOptions } from "@tanstack/query-core"
-import { computed, createAtom, makeObservable, reaction } from "mobx"
+import { createAtom, reaction } from "mobx"
 
 export class QueryStore<
   TQueryFnData = unknown,
