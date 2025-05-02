@@ -1,11 +1,10 @@
-// import { router } from "@/app/router/router"
 import { AnyRouter, AllParams } from "@tanstack/router-core"
 import { createAtom } from "mobx"
 
 export class RouterStore<R extends AnyRouter = AnyRouter> {
   private atom = createAtom('mobxRouter', this.startObserve.bind(this), this.stopObserve.bind(this))
 
-  navigate
+  readonly navigate: R['navigate']
 
   constructor(private _router: R) {
     this.navigate = this._router.navigate
@@ -22,20 +21,18 @@ export class RouterStore<R extends AnyRouter = AnyRouter> {
 
   get params(): AllParams<R['routeTree']> {
     const { matches } = this.router.state
-    const routeMatch = matches.at(-1)
-    return (routeMatch?.params || {}) as AllParams<R['routeTree']>
+    return (matches.at(-1)?.params ?? {}) as AllParams<R['routeTree']>
   }
 
   get search() {
     const { matches } = this.router.state
-    const routeMatch = matches[matches.length - 1]
-    return routeMatch ? routeMatch.search : {}
+    return matches.at(-1)?.search ?? {}
   }
 
 
   private unsubscribe = () => { }
   private startObserve() {
-    const unsubscribeRouter = this.router.subscribe('onResolved', () => {
+    const unsubscribeRouter = this._router.subscribe('onResolved', () => {
       this.atom.reportChanged()
     })
 

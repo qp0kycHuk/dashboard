@@ -10,11 +10,15 @@ import {
   rootRoute,
 } from "./routerTree"
 import { Layout } from "@/shared/ui/Layout/Layout"
+import { router as routerBase } from "./router"
 
-rootRoute.update({ component: Layout })
-homeRoute.update({ component: IndexPage })
-portfolioRoute.update({ component: PortfolioPage })
-infoRoute.update({ component: InfoPage })
-aboutRoute.update({ component: AboutPage })
+export function initRoutes() {
+  rootRoute.update({ component: Layout, })
+  homeRoute.update({ component: IndexPage, })
+  portfolioRoute.update({ component: PortfolioPage, })
+  infoRoute.update({ component: InfoPage, })
+  aboutRoute.update({ component: AboutPage, })
+  return routerBase
+}
 
-export function initRoutes() {}
+export const router = initRoutes()
