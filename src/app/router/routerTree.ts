@@ -13,7 +13,7 @@ export const homeRoute = createRoute({
 
 export const portfolioRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "portfolio/$id",
+  path: "portfolio/$accountId",
 })
 
 export const infoRoute = createRoute({
@@ -26,7 +26,7 @@ export const aboutRoute = createRoute({
   path: "/about/",
 })
 
-export const routeTreeType = rootRoute.addChildren([
+export const routeTree = rootRoute.addChildren([
   homeRoute,
   infoRoute,
   aboutRoute,

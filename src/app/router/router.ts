@@ -1,9 +1,9 @@
 import { createRouter } from "@tanstack/react-router"
-import { routeTreeType } from "./routesTypes"
+import { routeTree } from "./routerTree"
 import { RouterStore } from "@/shared/lib/router-store"
 
 
-export const router = createRouter({ routeTree: routeTreeType })
+export const router = createRouter({ routeTree: routeTree })
 export const routerStore = new RouterStore(router)
 
 declare module "@tanstack/react-router" {
