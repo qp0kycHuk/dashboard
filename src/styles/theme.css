@@ -41,6 +41,9 @@
   /* TODO make themed typography */
   /* --text-h1:  */
 
+  /* spacing */
+  --spacing-layout: 12px;
+
   /* containers */
   --container-*: initial;
   --container-xs: 420px;

@@ -2,6 +2,7 @@ import { twJoin } from "tailwind-merge"
 import { observer } from "mobx-react-lite"
 import classes from "./ThemeToggle.module.scss"
 import { themeStore } from "../../store/ThemeStore"
+import { cn } from "@/shared/utils/classnames"
 
 interface IProps {
   className?: string
@@ -9,7 +10,7 @@ interface IProps {
 
 function ThemeToggleComponent({ className }: IProps) {
   return (
-    <label className={className}>
+    <label className={cn("block",className)}>
       <input
         type="checkbox"
         className={classes.checkbox}
