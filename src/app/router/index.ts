@@ -1,2 +1,1 @@
-export { routerStore } from './router'
-export { router } from './routes'
+export { router } from './router'

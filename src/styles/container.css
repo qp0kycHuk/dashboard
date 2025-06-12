@@ -2,11 +2,8 @@
   --section-width     : calc(100vw - 30px);
 }
 
-dialog,
-section,
-header,
-footer {
-  padding-inline: calc(50% - var(--section-width) / 2);
+.p-container {
+  padding-inline: max(calc(50% - var(--section-width) / 2), 20px);
 }
 
 

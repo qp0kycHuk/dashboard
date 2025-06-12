@@ -1,19 +1,17 @@
-import { Navigation } from "@/entities/accounts/ui/navigation"
-import { ThemeToggle } from "@/entities/theme/ui/ThemeToggle/ThemeToggle"
-import { Outlet } from "@tanstack/react-router"
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-import { observer } from "mobx-react-lite"
+import { Outlet } from "react-router"
+import { Header } from "../Header/Header"
+import { Sidebar } from "../Sidebar/Sidebar"
 
-
-export const Layout = observer(() => {
+export function Layout() {
   return (
-    <>
-      <header className="flex items-center justify-between gap-3 py-2 bg-l3">
-        <ThemeToggle className="text-4xl" />
-        <Navigation />
-      </header>
-      <Outlet />
-      <TanStackRouterDevtools  />
-    </>
+    <div className="flex min-h-screen">
+      <Sidebar />
+      <div className="flex flex-col flex-1">
+        <Header />
+        <div className="flex-1 p-container py-4 flex flex-col">
+          <Outlet />
+        </div>
+      </div>
+    </div>
   )
-})
+}

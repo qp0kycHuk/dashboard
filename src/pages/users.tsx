@@ -1,9 +1,9 @@
 
-export function IndexPage() {
+export function UsersPage() {
 
   return (
     <section>
-      Hello world
+      UsersPage
     </section>
   )
 }
