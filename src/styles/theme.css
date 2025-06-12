@@ -37,6 +37,10 @@
   --font-base: "Inter", arial, helvetica, sans-serif;
   --font-alt: "Gilroy", arial, helvetica, sans-serif;
 
+  /* text */
+  /* TODO make themed typography */
+  /* --text-h1:  */
+
   /* containers */
   --container-*: initial;
   --container-xs: 420px;

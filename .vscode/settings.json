@@ -11,7 +11,7 @@
     "postcss.config.js": true,
     "tsconfig.json": true,
     "vite.config.ts": true,
-    "package.json": true,
+    // "package.json": true,
     "server-deploy.sh": true
   },
   "editor.detectIndentation": false,
