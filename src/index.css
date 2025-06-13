@@ -4,6 +4,7 @@
 
 @plugin '@qpokychuk/tailwind-button-plugin';
 
+@import "./styles/colors.css";
 @import "./styles/theme.css";
 
 @import "@qpokychuk/fonts/inter/index.css";

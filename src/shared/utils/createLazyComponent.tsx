@@ -1,5 +1,6 @@
 import { Loader } from "@/shared/ui/Loader/Loader"
 import { lazy, Suspense, ComponentType, ReactNode } from "react"
+import { wait } from "./wait"
 
 export function createLazyComponent<T extends ComponentType<any>>(
   loader: () => Promise<{ default: T }>,
@@ -7,7 +8,7 @@ export function createLazyComponent<T extends ComponentType<any>>(
 ): ComponentType<React.ComponentProps<T>> {
   const LazyComponent = lazy(async () => {
     if (import.meta.env.DEV) {
-      await new Promise((r) => setTimeout(r, 500))
+      await wait()
     }
     return loader()
   })

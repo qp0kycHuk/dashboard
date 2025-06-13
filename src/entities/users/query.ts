@@ -1,4 +1,4 @@
-import { queryOptions } from "@tanstack/react-query"
+import { keepPreviousData, queryOptions } from "@tanstack/react-query"
 import { usersApi } from "./api"
 import { PaginatedPayload } from "@/features/pagination/types"
 
@@ -9,5 +9,6 @@ export const usersQuery = {
     queryOptions({
       queryKey: [KEY, "list", data],
       queryFn: ({ signal }) => usersApi.list({ signal, data }),
+      placeholderData: keepPreviousData,
     }),
 }

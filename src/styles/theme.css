@@ -14,17 +14,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme static {
   /* theme colors */
   --color-*: initial;
-  --color-primary: #00aff5;
-  --color-sec: #ff9f43;
-  --color-red: #c0392b;
-  --color-green: #27ae60;
-  --color-blue: #2980b9;
-  --color-yellow: #f39c12;
-  --color-white: #fff;
-  --color-black: #000;
+  --color-primary: rgb(0, 175, 245);
+  --color-sec: rgb(255, 159, 67);
+  --color-red: rgb(192, 57, 43);
+  --color-green: rgb(39, 174, 96);
+  --color-blue: rgb(41, 128, 185);
+  --color-yellow: rgb(243, 156, 18);
+  --color-white: rgb(255, 255, 255);
+  --color-black: rgb(0, 0, 0);
 
   /* colors */
   --color-l1: rgb(var(--rgb-l1));
@@ -38,8 +38,12 @@
   --font-alt: "Gilroy", arial, helvetica, sans-serif;
 
   /* text */
-  /* TODO make themed typography */
-  /* --text-h1:  */
+  --text-h1: 3rem;
+  --text-h1--line-height: 1.2;
+  --text-h1--font-weight: 600;
+  --text-h2: 2rem;
+  --text-h2--line-height: 1.2;
+  --text-h2--font-weight: 600;
 
   /* spacing */
   --spacing-layout: 12px;
@@ -59,4 +63,11 @@
   --breakpoint-md: calc(740px + 29.98px);
   --breakpoint-lg: calc(1170px + 29.98px);
   --breakpoint-xl: 1366px;
+
+  --ease-elastic: cubic-bezier(0.2, 2, 0.8, 1);
+
+  --radius-*: initial;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }

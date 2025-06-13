@@ -9,3 +9,5 @@ export const PAGINATED_FALLBACK: Paginated<never[]> = {
   pages: 1,
   prev: null,
 }
+
+export const PAGINATED_PAYLOAD_FALLBACK = { _page: 1 }
